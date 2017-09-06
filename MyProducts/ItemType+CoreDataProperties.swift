@@ -16,7 +16,7 @@ extension ItemType {
         return NSFetchRequest<ItemType>(entityName: "ItemType")
     }
 
-    @NSManaged public var type: String?
+    @NSManaged public var type: String
     @NSManaged public var toItem: Item?
 
 }

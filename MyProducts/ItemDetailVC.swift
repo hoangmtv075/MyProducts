@@ -12,9 +12,9 @@ import CoreData
 class ItemDetailVC: UIViewController, NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var thumbnailImg: UIImageView!
-    @IBOutlet weak var titleLbl: UITextField!
-    @IBOutlet weak var priceLbl: UITextField!
-    @IBOutlet weak var detailsLbl: UITextField!
+    @IBOutlet weak var titleTF: UITextField!
+    @IBOutlet weak var priceTF: UITextField!
+    @IBOutlet weak var detailsTF: UITextField!
     @IBOutlet weak var selectStoreLbl: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var addImageBtn: UIButton!
@@ -94,9 +94,9 @@ class ItemDetailVC: UIViewController, NSFetchedResultsControllerDelegate {
         if let item = editToItem {
             title = "Edit Item"
             
-            titleLbl.text = item.title
-            priceLbl.text = "\(item.price)"
-            detailsLbl.text = item.details
+            titleTF.text = item.title
+            priceTF.text = "\(item.price)"
+            detailsTF.text = item.details
             
             let st = item.stores
             var index = 0
@@ -135,9 +135,9 @@ class ItemDetailVC: UIViewController, NSFetchedResultsControllerDelegate {
             imge.image = nil
         }
         
-        item.title = titleLbl.text!
-        item.price = (priceLbl.text! as NSString).doubleValue
-        item.details = detailsLbl.text!
+        item.title = titleTF.text!
+        item.price = (priceTF.text! as NSString).doubleValue
+        item.details = detailsTF.text!
         item.stores = stores[self.pickerView.selectedRow(inComponent: 0)]
         item.toItemType = type
         type.type = selectStoreLbl.text!
