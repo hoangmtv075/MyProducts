@@ -63,6 +63,7 @@ class ItemVC: UIViewController {
         tableView.showsVerticalScrollIndicator = false
         
         performFetch()
+        print("OK")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
