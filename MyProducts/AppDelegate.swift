@@ -37,7 +37,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print(documentDirectory())
         
+        customizeAppearance()
+        
         return true
+    }
+    
+    func customizeAppearance() {
+        let tintColor = UIColor(red: 70/255, green: 70/255, blue: 70/255, alpha: 1)
+        
+        UINavigationBar.appearance().tintColor = tintColor
+        UINavigationBar.appearance().barTintColor = .white
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: tintColor]
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

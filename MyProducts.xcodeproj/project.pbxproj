@@ -83,11 +83,11 @@
 				94EE9B4D1F5FC2B700473305 /* View */,
 				94BFB3A71F5FC14600FA07D5 /* Controller */,
 				94BFB3AB1F5FC27700FA07D5 /* Configure */,
+				94BFB3991F5FC0A000FA07D5 /* DataModel */,
 				94BFB3881F5FC06800FA07D5 /* Main.storyboard */,
 				94BFB38B1F5FC06800FA07D5 /* Assets.xcassets */,
 				94BFB38D1F5FC06800FA07D5 /* LaunchScreen.storyboard */,
 				94BFB3901F5FC06800FA07D5 /* Info.plist */,
-				94BFB3991F5FC0A000FA07D5 /* DataModel */,
 			);
 			path = MyProducts;
 			sourceTree = "<group>";

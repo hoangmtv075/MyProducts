@@ -16,38 +16,7 @@ class ItemVC: UIViewController {
     
     var managedObjectContext: NSManagedObjectContext!
     
-    lazy var fetchedResultsController: NSFetchedResultsController<Item> = {
-        let fetchRequest = NSFetchRequest<Item>()
-        
-        let entity = Item.entity()
-        fetchRequest.entity = entity
-        
-        if self.segmentedControl.selectedSegmentIndex == 0 {
-            let sortDescriptor1 = NSSortDescriptor(key: "created", ascending: false)
-            fetchRequest.sortDescriptors = [sortDescriptor1]
-            print(self.segmentedControl.selectedSegmentIndex)
-            
-        } else if self.segmentedControl.selectedSegmentIndex == 1 {
-            let sortDescriptor2 = NSSortDescriptor(key: "price", ascending: true)
-            fetchRequest.sortDescriptors = [sortDescriptor2]
-            print(self.segmentedControl.selectedSegmentIndex)
-            
-        } else if self.segmentedControl.selectedSegmentIndex == 2 {
-            let sortDescriptor3 = NSSortDescriptor(key: "title", ascending: true)
-            fetchRequest.sortDescriptors = [sortDescriptor3]
-            print(self.segmentedControl.selectedSegmentIndex)
-        }
-        
-        fetchRequest.fetchBatchSize = 20
-        
-        let fetchedResultsController = NSFetchedResultsController(
-            fetchRequest: fetchRequest,
-            managedObjectContext: self.managedObjectContext,
-            sectionNameKeyPath: nil,
-            cacheName: "Item")
-        fetchedResultsController.delegate = self
-        return fetchedResultsController
-    }()
+    var fetchedResultsController: NSFetchedResultsController<Item>!
     
     deinit {
         fetchedResultsController.delegate = nil
@@ -62,8 +31,49 @@ class ItemVC: UIViewController {
         tableView.showsHorizontalScrollIndicator = false
         tableView.showsVerticalScrollIndicator = false
         
+        let tintColor = UIColor(red: 70/255, green: 70/255, blue: 70/255, alpha: 1)
+        segmentedControl.tintColor = tintColor
+        
         performFetch()
-        print("OK")
+    }
+    
+    func performFetch() {
+        let fetchRequest = NSFetchRequest<Item>()
+        
+        let entity = Item.entity()
+        fetchRequest.entity = entity
+        
+        let sortDescriptor1 = NSSortDescriptor(key: "created", ascending: false)
+        let sortDescriptor2 = NSSortDescriptor(key: "price", ascending: true)
+        let sortDescriptor3 = NSSortDescriptor(key: "title", ascending: true)
+        
+        switch self.segmentedControl.selectedSegmentIndex {
+        case 0:
+            fetchRequest.sortDescriptors = [sortDescriptor1]
+        case 1:
+            fetchRequest.sortDescriptors = [sortDescriptor2]
+        case 2:
+            fetchRequest.sortDescriptors = [sortDescriptor3]
+        default:
+            break
+        }
+        
+        fetchRequest.fetchBatchSize = 20
+        
+        let fetchedResultsController = NSFetchedResultsController(
+            fetchRequest: fetchRequest,
+            managedObjectContext: self.managedObjectContext,
+            sectionNameKeyPath: nil,
+            cacheName: "Item")
+        self.fetchedResultsController = fetchedResultsController
+        fetchedResultsController.delegate = self
+        
+        do {
+            try fetchedResultsController.performFetch()
+            
+        } catch {
+            print("Error")
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -82,22 +92,8 @@ class ItemVC: UIViewController {
     }
     
     @IBAction func SegmentedChanged(_ sender: UISegmentedControl) {
-        do {
-            try fetchedResultsController.performFetch()
-            
-        } catch {
-            print("Error")
-        }
+        performFetch()
         tableView.reloadData()
-    }
-    
-    func performFetch() {
-        do {
-            try fetchedResultsController.performFetch()
-            
-        } catch {
-            print("Error")
-        }
     }
 }
 

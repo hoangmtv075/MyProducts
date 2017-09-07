@@ -17,7 +17,20 @@ class ItemCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        let tintColor = UIColor(red: 70/255, green: 70/255, blue: 70/255, alpha: 1)
         
+        titleLbl.textColor = tintColor
+        titleLbl.highlightedTextColor = titleLbl.textColor
+        
+        priceLbl.textColor = tintColor
+        priceLbl.highlightedTextColor = priceLbl.textColor
+        
+        detailsLbl.textColor = tintColor
+        detailsLbl.highlightedTextColor = detailsLbl.textColor
+        
+        let selectedView = UIView(frame: CGRect.zero)
+        selectedView.backgroundColor = UIColor(red: 70/255, green: 70/255, blue: 70/255, alpha: 0.1)
+        selectedBackgroundView = selectedView
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
