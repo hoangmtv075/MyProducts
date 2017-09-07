@@ -58,6 +58,21 @@ class ItemDetailVC: UIViewController, NSFetchedResultsControllerDelegate {
         loadDataDetail()
         
         listentForBackgroundNotification()
+        
+        tapGesture()
+        returnKey()
+    }
+    
+    func tapGesture() {
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGestureRecognizer))
+        gestureRecognizer.cancelsTouchesInView = false
+        view.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    func tapGestureRecognizer(_ gestureRecognizer: UITapGestureRecognizer) {
+        titleTF.resignFirstResponder()
+        priceTF.resignFirstResponder()
+        detailsTF.resignFirstResponder()
     }
     
     func loadPickerView() {
@@ -275,5 +290,22 @@ extension ItemDetailVC: UIImagePickerControllerDelegate, UINavigationControllerD
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension ItemDetailVC: UITextFieldDelegate {
+    
+    func returnKey() {
+        titleTF.delegate = self
+        priceTF.delegate = self
+        detailsTF.delegate = self
+        titleTF.returnKeyType = .done
+        priceTF.returnKeyType = .done
+        detailsTF.returnKeyType = .done
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

@@ -57,47 +57,44 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgD-kc-SIx">
-                                                            <rect key="frame" x="116" y="8" width="195" height="21"/>
+                                                            <rect key="frame" x="116" y="5" width="195" height="38"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="21" id="7sN-bo-bky"/>
+                                                                <constraint firstAttribute="height" constant="38" id="VIf-RN-UbU"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hiw-63-4p6">
-                                                            <rect key="frame" x="116" y="34" width="195" height="21"/>
+                                                            <rect key="frame" x="116" y="48" width="195" height="21"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="21" id="ONv-ek-x92"/>
+                                                                <constraint firstAttribute="height" constant="21" id="fli-rq-TjL"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Damascus" family="Damascus" pointSize="16"/>
+                                                            <fontDescription key="fontDescription" name="Damascus" family="Damascus" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5Fg-0B-P6P">
-                                                            <rect key="frame" x="116" y="60" width="195" height="66"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="66" id="HYg-gv-IXa"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="15"/>
+                                                            <rect key="frame" x="116" y="74" width="195" height="55"/>
+                                                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="fgD-kc-SIx" secondAttribute="trailing" constant="8" id="5Iw-FO-zrY"/>
-                                                        <constraint firstItem="fgD-kc-SIx" firstAttribute="top" secondItem="beA-7a-hxz" secondAttribute="top" constant="8" id="Jbp-WO-05j"/>
-                                                        <constraint firstItem="Hiw-63-4p6" firstAttribute="leading" secondItem="fgD-kc-SIx" secondAttribute="leading" id="KkU-6O-VOA"/>
-                                                        <constraint firstItem="5Fg-0B-P6P" firstAttribute="leading" secondItem="Hiw-63-4p6" secondAttribute="leading" id="Sth-3S-hzY"/>
+                                                        <constraint firstItem="fgD-kc-SIx" firstAttribute="top" secondItem="beA-7a-hxz" secondAttribute="top" constant="5" id="8cw-av-enA"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Hiw-63-4p6" secondAttribute="trailing" constant="8" id="CQy-Ma-5GL"/>
+                                                        <constraint firstItem="fgD-kc-SIx" firstAttribute="leading" secondItem="lUZ-jG-b9W" secondAttribute="trailing" constant="8" id="EPF-YZ-zGC"/>
+                                                        <constraint firstAttribute="trailing" secondItem="5Fg-0B-P6P" secondAttribute="trailing" constant="8" id="GaA-fW-1OI"/>
+                                                        <constraint firstItem="Hiw-63-4p6" firstAttribute="top" secondItem="fgD-kc-SIx" secondAttribute="bottom" constant="5" id="JOT-7L-ZSS"/>
+                                                        <constraint firstAttribute="bottom" secondItem="5Fg-0B-P6P" secondAttribute="bottom" constant="4.5" id="NkS-Az-hz3"/>
+                                                        <constraint firstItem="5Fg-0B-P6P" firstAttribute="top" secondItem="Hiw-63-4p6" secondAttribute="bottom" constant="5" id="UNa-KF-YZt"/>
+                                                        <constraint firstItem="Hiw-63-4p6" firstAttribute="leading" secondItem="fgD-kc-SIx" secondAttribute="leading" id="VwZ-zc-z3W"/>
                                                         <constraint firstItem="lUZ-jG-b9W" firstAttribute="leading" secondItem="beA-7a-hxz" secondAttribute="leading" constant="8" id="aXw-qb-MoS"/>
-                                                        <constraint firstAttribute="bottom" secondItem="5Fg-0B-P6P" secondAttribute="bottom" constant="7.5" id="hJz-ku-SHl"/>
-                                                        <constraint firstItem="fgD-kc-SIx" firstAttribute="leading" secondItem="lUZ-jG-b9W" secondAttribute="trailing" constant="8" id="idG-ES-m0K"/>
+                                                        <constraint firstItem="5Fg-0B-P6P" firstAttribute="leading" secondItem="Hiw-63-4p6" secondAttribute="leading" id="d5E-aw-a4e"/>
+                                                        <constraint firstAttribute="trailing" secondItem="fgD-kc-SIx" secondAttribute="trailing" constant="8" id="j04-nI-tyu"/>
                                                         <constraint firstItem="lUZ-jG-b9W" firstAttribute="top" secondItem="beA-7a-hxz" secondAttribute="top" constant="16" id="md7-ai-SYC"/>
-                                                        <constraint firstItem="5Fg-0B-P6P" firstAttribute="top" secondItem="Hiw-63-4p6" secondAttribute="bottom" constant="5" id="nff-UU-Aoc"/>
-                                                        <constraint firstItem="Hiw-63-4p6" firstAttribute="top" secondItem="fgD-kc-SIx" secondAttribute="bottom" constant="5" id="xWn-kx-8OK"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Hiw-63-4p6" secondAttribute="trailing" constant="8" id="xhL-Uh-BpD"/>
-                                                        <constraint firstAttribute="trailing" secondItem="5Fg-0B-P6P" secondAttribute="trailing" constant="8" id="zFe-IY-wce"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="configureView" value="YES"/>
